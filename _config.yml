@@ -1,37 +1,54 @@
-title: Hello, world! I'm Yasemin CIRT!
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-permalink: ':title/'
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-site-twitter: yasemincirt #if your site has a twitter account, enter it here
-
-# Author Settings
-author: Yasemin CIRT # add your name
-author-img: yasemin-cirt.jpg # add your photo
-about-author: I am a software developer focusing on back-end development. Always hungry to keep learning. # add description
-social-twitter: # add your Twitter handle
-social-facebook: # add your Facebook handle
-social-github: yasemincirt # add your Github handle
-social-linkedin: # add your Linkedin handle
-social-email: # add your Email address
-
-# Disqus
-discus-identifier: # add your discus identifier
-
-# Tracker
-analytics: # Google Analytics
-
-# Build Settings
+# Build settings
+permalink: /blog/:year/:title/
 markdown: kramdown
-plugins:
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jemoji
+highlighter: pygments
+plugins: [jekyll-paginate-v2]
 
-paginate: 8
-paginate_path: "/page/:num"
+pagination:
+  enabled: true
+  per_page: 3
+  permalink: "/page/:num/"
 
-exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
+comments: true
+
+source: source
+destination: _site
+sass:
+  sass_dir: _sass
+  style: compressed # expanded
+
+# SEO settings
+title: Yasemin CIRT 
+description: "Blockchain Engineer"
+keywords: "blockchain, crypto, engineer, bitcoin, ethereum, dapp, contract"
+url: http://yasemincirt.github.io
+baseurl: "yasemincirt.github.io"
+
+google_analytics: UA-52446115-1
+repo: http://github.com/nandomoreirame/end2end
+disqus_shortname: "nandothemes"
+disqus_site_shortname: "nandothemes"
+
+# Author settings
+author:
+  name: Yasemin CIRT
+  job: Blockchain Engineer
+  bio: "blockchain engineer @Icrypex, director of technology @istbcw, solidity lover, ethereum application developer"
+  thumb: /images/author.jpg
+  email: yasemincirt@gmail.com
+  url: https://yasemincirt.github.io/
+  github: https://github.com/yasemincirt
+  twitter: https://twitter.com/yasemincirt
+  facebook:
+  linkedin: https://linkedin.com/in/yasemincirt
+
+# navbar pages
+navbar:
+  - slug: about
+    title: About
+  - slug: icons
+    title: Icons
+  - slug: blog
+    title: Blog
+
+exclude: ["config.rb", "src", "Gemfile", "Gemfile.lock", "package.json","README.md", "Rakefile"]
